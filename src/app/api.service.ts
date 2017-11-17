@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 
 @Injectable()
 export class ApiService {
   url = 'http://localhost:3000/api/';
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
   get(endpoint: string, params?: any, reqOpts?: any) {
     if (!reqOpts) {
       reqOpts = {
