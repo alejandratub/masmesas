@@ -7,7 +7,7 @@ export class EmpleadosService {
 
   constructor(public api: ApiService) { }
   getEmpleados(params? ) {
-    return this.api.get('/empleados', params);
+    return this.api.get('empleados', params);
   }
 
 }
