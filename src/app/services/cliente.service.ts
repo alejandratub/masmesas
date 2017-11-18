@@ -6,9 +6,10 @@ import {Cliente} from '../models/cliente';
 
 @Injectable()
 export class ClienteService {
+  cliente: Cliente;
 
   constructor(public http: HttpClient, private auth: AuthService) { }
-  getCliente() {
+  getAllClientes() {
     return this.http.get('http://localhost:3000/api/clientes?access_token=' + this.auth.getToken())
       .map(res => res as Cliente[] || []);
   }
@@ -23,6 +24,13 @@ export class ClienteService {
   deleteCliente(cliente) {
     return this.http.delete('http://localhost:3000/api/clientes/' + cliente.id + '?access_token=' + this.auth.getToken(), {});
   }
-
-
+  getCliente(cliente) {
+    return this.http.get('http://localhost:3000/api/clientes/' + cliente.id + '?access_token=' + this.auth.getToken(), {});
+  }
+  getLocalCliente() {
+    return this.cliente;
+  }
+  setLocalCliente(cliente) {
+    this.cliente = cliente;
+  }
 }

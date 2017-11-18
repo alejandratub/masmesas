@@ -1,3 +1,32 @@
-<p>
-  ver-cliente works!
-</p>
+<main>
+  <h2>Section title</h2>
+  <div class="table-responsive">
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary" routerLink="/clientes">Regresar</button>
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+
+        <th> </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.apellido}}</td>
+        <td>{{cliente.email}}</td>
+        <td>{{cliente.telefono}}</td>
+        <td>{{cliente.direccion}}</td>
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</main>

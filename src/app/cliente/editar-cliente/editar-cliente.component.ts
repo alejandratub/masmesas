@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ClienteService} from '../../services/cliente.service';
 import {Router} from '@angular/router';
+import {Cliente} from "../../models/cliente";
 
 @Component({
   selector: 'app-editar-cliente',
@@ -8,10 +9,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./editar-cliente.component.css']
 })
 export class EditarClienteComponent implements OnInit {
+  cliente : Cliente;
+  constructor(private clienteService: ClienteService, private router: Router) {
+    this.cliente = new Cliente();
+  }
 
-  constructor(private clienteService: ClienteService, private router: Router) { }
-  updateCliente(cliente) {
-    this.clienteService.updateCliente(cliente).subscribe(data => {
+  updateCliente() {
+    this.clienteService.updateCliente(this.cliente).subscribe(data => {
       alert('Cliente editado con éxito');
       this.router.navigate(['clientes']);
       console.log(data);
@@ -23,6 +27,7 @@ export class EditarClienteComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.cliente = this.clienteService.getLocalCliente();
   }
 
 }

@@ -1,0 +1,36 @@
+<div class="container">
+
+  <h2>Agregar Empleado</h2>
+  <form name="form" (ngSubmit)="f.form.valid && addEmpleado()" #f="ngForm" novalidate>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !nombre.valid }">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="empleado.nombre" #nombre="ngModel" required />
+      <div *ngIf="f.submitted && !nombre.valid" class="help-block">El nombre es incorrecto</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !apellido.valid }">
+      <label for="apellido">Apellido</label>
+      <input type="text" class="form-control" name="apellido" [(ngModel)]="empleado.apellido" #apellido="ngModel" required />
+      <div *ngIf="f.submitted && !apellido.valid" class="help-block">El apellido es incorrecto</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !sueldo.valid }">
+      <label for="sueldo">Sueldo</label>
+      <input type="number" class="form-control" name="sueldo" [(ngModel)]="empleado.sueldo" #sueldo="ngModel" required />
+      <div *ngIf="f.submitted && !sueldo.valid" class="help-block">El sueldo es incorrecto</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !puesto.valid }">
+      <label for="puesto">puesto</label>
+      <input type="text" class="form-control" name="direccion" [(ngModel)]="empleado.direpuestoccion" #puesto="ngModel" required />
+      <div *ngIf="f.submitted && !puesto.valid" class="help-block">El puesto es incorrecto</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !telefono.valid }">
+      <label for="telefono">Telefono</label>
+      <input type="number" class="form-control" name="telefono" [(ngModel)]="empleado.telefono" #telefono="ngModel" required />
+      <div *ngIf="f.submitted && !telefono.valid" class="help-block">El telefono es incorrecto</div>
+    </div>
+
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Agregar</button>
+    </div>
+  </form>
+
+</div>
