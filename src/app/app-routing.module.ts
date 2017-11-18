@@ -13,6 +13,7 @@ import {VerClienteComponent} from './cliente/ver-cliente/ver-cliente.component';
 import {ClienteEventoComponent} from './evento/cliente-evento/cliente-evento.component';
 import {AgregarEventoComponent} from './evento/agregar-evento/agregar-evento.component';
 import {EditarEventoComponent} from './evento/editar-evento/editar-evento.component';
+import {EventosComponent} from "./evento/eventos/eventos.component";
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'editar-cliente', component: EditarClienteComponent, canActivate: [CanActivateTeam]},
   {path: 'ver-cliente', component: VerClienteComponent, canActivate: [CanActivateTeam]},
   // eventos
+  {path: 'eventos', component: EventosComponent, canActivate: [CanActivateTeam]},
   {path: 'cliente-evento', component: ClienteEventoComponent, canActivate: [CanActivateTeam]},
   {path: 'agregar-evento', component: AgregarEventoComponent, canActivate: [CanActivateTeam]},
   {path: 'editar-evento', component: EditarEventoComponent, canActivate: [CanActivateTeam]}

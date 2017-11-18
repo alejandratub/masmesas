@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from './auth.service';
 import {Evento} from '../models/eventos';
+import {Cliente} from "../models/cliente";
 
 
 @Injectable()
@@ -36,5 +37,9 @@ export class EventosService {
   getEventoCliente(cliente) {
     return this.http.get('http://localhost:3000/api/clientes/' + cliente.id + '/eventos?access_token=' + this.auth.getToken(), {})
       .map(res => res as Evento[] || []);
+  }
+  getCliente(evento){
+    return this.http.get('http://localhost:3000/api/eventos/' + evento.id + '/cliente?access_token=' + this.auth.getToken(), {})
+      .map(res => res as Cliente[] || []);
   }
 }
