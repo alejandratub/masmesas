@@ -24,6 +24,9 @@ import {MueblesService} from './services/muebles.service';
 import {DecoracionService} from './services/decoracion.service';
 import {PagoService} from './services/pago.service';
 import {ClienteService} from './services/cliente.service';
+import { AgregarClienteComponent } from './cliente/agregar-cliente/agregar-cliente.component';
+import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
+import { VerClienteComponent } from './cliente/ver-cliente/ver-cliente.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import {ClienteService} from './services/cliente.service';
     EmpleadosComponent,
     AgregarEmpleadoComponent,
     LoginComponent,
-    ClienteComponent
+    ClienteComponent,
+    AgregarClienteComponent,
+    EditarClienteComponent,
+    VerClienteComponent
   ],
   imports: [
     BrowserModule,
