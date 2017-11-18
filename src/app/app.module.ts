@@ -17,6 +17,13 @@ import {CanActivateTeam} from './guards/canactivateteam';
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import {TokenInterceptor} from './guards/tokeninterceptor';
+import { ClienteComponent } from './cliente/cliente.component';
+import {EventosService} from './services/eventos.service';
+import {CotizacionService} from './services/cotizacion.service';
+import {MueblesService} from './services/muebles.service';
+import {DecoracionService} from './services/decoracion.service';
+import {PagoService} from './services/pago.service';
+import {ClienteService} from './services/cliente.service';
 
 
 @NgModule({
@@ -27,7 +34,8 @@ import {TokenInterceptor} from './guards/tokeninterceptor';
     EditarEmpleadoComponent,
     EmpleadosComponent,
     AgregarEmpleadoComponent,
-    LoginComponent
+    LoginComponent,
+    ClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +47,12 @@ import {TokenInterceptor} from './guards/tokeninterceptor';
     ApiService,
     EmpleadosService,
     AuthService,
+    ClienteService,
+    EventosService,
+    CotizacionService,
+    MueblesService,
+    DecoracionService,
+    PagoService,
     CanActivateTeam,
     TokenInterceptor
   ],
