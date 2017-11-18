@@ -1,0 +1,66 @@
+<div class="container">
+
+  <h2>Nueva Cotizacion</h2>
+  <form name="form" (ngSubmit)="f.form.valid && addCliente()" #f="ngForm" novalidate>
+    <div class="row">
+      <div class="col">
+        <label for="clientes">Clientes</label><br>
+        <select name="clientes">
+          <option *ngFor="let cliente of clientes"
+                  [value]="cliente">
+            {{cliente.nombre}} {{cliente.apellido}}
+          </option>
+        </select>
+
+      </div>
+      <div class="col">
+        <div class="dropdown">
+          <label for="eventos">Eventos</label><br>
+          <select name="eventos">
+            <option *ngFor="let evento of eventos"
+                    [value]="evento">
+              {{evento.tipo}} {{evento.fecha}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="dropdown">
+          <label for="muebles">Muebles</label><br>
+          <select name="muebles">
+            <option *ngFor="let mueble of muebles"
+                    [value]="mueble">
+              {{mueble.nombre}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="dropdown">
+          <label for="decoracion">Decoracion</label><br>
+          <select name="decoracion">
+            <option *ngFor="let decoracion of decoraciones"
+                    [value]="decoracion">
+              {{decoracion.nombre}}
+            </option>
+          </select>
+      </div>
+    </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
+      <label for="precio_montaje">Precio de montaje</label>
+      <input type="number" class="form-control" name="precio_montaje" [(ngModel)]="cotizacion.precio_montaje" #precio_montaje="ngModel" required />
+      <div *ngIf="f.submitted && !precio_montaje.valid" class="help-block">El precio montaje es incorrecto</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
+      <label for="flete">Flete</label>
+      <input type="number" class="form-control" name="flete" [(ngModel)]="cotizacion.flete" #flete="ngModel" required />
+      <div *ngIf="f.submitted && !flete.valid" class="help-block">El flete es incorrecto</div>
+    </div>
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Agregar</button>
+    </div>
+  </form>
+
+</div>

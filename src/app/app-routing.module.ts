@@ -14,6 +14,7 @@ import {ClienteEventoComponent} from './evento/cliente-evento/cliente-evento.com
 import {AgregarEventoComponent} from './evento/agregar-evento/agregar-evento.component';
 import {EditarEventoComponent} from './evento/editar-evento/editar-evento.component';
 import {EventosComponent} from "./evento/eventos/eventos.component";
+import {NuevaCotizacionComponent} from "./cotizacion/nueva-cotizacion/nueva-cotizacion.component";
 
 
 const routes: Routes = [
@@ -33,7 +34,9 @@ const routes: Routes = [
   {path: 'eventos', component: EventosComponent, canActivate: [CanActivateTeam]},
   {path: 'cliente-evento', component: ClienteEventoComponent, canActivate: [CanActivateTeam]},
   {path: 'agregar-evento', component: AgregarEventoComponent, canActivate: [CanActivateTeam]},
-  {path: 'editar-evento', component: EditarEventoComponent, canActivate: [CanActivateTeam]}
+  {path: 'editar-evento', component: EditarEventoComponent, canActivate: [CanActivateTeam]},
+  // cotizaciones
+  {path: 'nueva-cotizacion', component: NuevaCotizacionComponent, canActivate: [CanActivateTeam]},
 
 
 

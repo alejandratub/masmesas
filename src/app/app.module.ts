@@ -21,7 +21,7 @@ import { ClienteComponent } from './cliente/clientes/cliente.component';
 import {EventosService} from './services/eventos.service';
 import {CotizacionService} from './services/cotizacion.service';
 import {MueblesService} from './services/muebles.service';
-import {DecoracionService} from './services/decoracion.service';
+import {DecoracionsService} from './services/decoracion.service';
 import {PagoService} from './services/pago.service';
 import {ClienteService} from './services/cliente.service';
 import { AgregarClienteComponent } from './cliente/agregar-cliente/agregar-cliente.component';
@@ -31,6 +31,7 @@ import { EventosComponent } from './evento/eventos/eventos.component';
 import { AgregarEventoComponent } from './evento/agregar-evento/agregar-evento.component';
 import { EditarEventoComponent } from './evento/editar-evento/editar-evento.component';
 import { ClienteEventoComponent } from './evento/cliente-evento/cliente-evento.component';
+import { NuevaCotizacionComponent } from './cotizacion/nueva-cotizacion/nueva-cotizacion.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { ClienteEventoComponent } from './evento/cliente-evento/cliente-evento.c
     EventosComponent,
     AgregarEventoComponent,
     EditarEventoComponent,
-    ClienteEventoComponent
+    ClienteEventoComponent,
+    NuevaCotizacionComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,7 @@ import { ClienteEventoComponent } from './evento/cliente-evento/cliente-evento.c
     EventosService,
     CotizacionService,
     MueblesService,
-    DecoracionService,
+    DecoracionsService,
     PagoService,
     CanActivateTeam,
     TokenInterceptor

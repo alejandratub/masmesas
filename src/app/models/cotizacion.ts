@@ -1,8 +1,7 @@
 export class Cotizacion {
-  total: number;
+  precio_montaje: number;
+  flete: number;
   id: string;
   eventoId: string;
-  muebleId: string;
-  decoracionId: string;
   pagoId: string;
 }
