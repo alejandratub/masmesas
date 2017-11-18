@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {VerEmpleadoComponent} from './ver_empleado/empleado.component';
+import {VerEmpleadoComponent} from './empleado/ver_empleado/empleado.component';
 import {PrincipalComponent} from './principal/principal.component';
-import {EmpleadosComponent} from './empleados/empleados.component';
+import {EmpleadosComponent} from './empleado/empleados/empleados.component';
 import {CanActivateTeam} from './guards/canactivateteam';
 import {LoginComponent} from './login/login.component';
 

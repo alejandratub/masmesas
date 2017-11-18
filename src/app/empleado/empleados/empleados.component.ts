@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {EmpleadosService} from '../services/empleados.service';
+import {EmpleadosService} from '../../services/empleados.service';
 
 @Component({
   selector: 'app-eliminar-empleado',
