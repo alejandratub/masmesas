@@ -30,7 +30,6 @@ import { VerClienteComponent } from './cliente/ver-cliente/ver-cliente.component
 import { EventosComponent } from './evento/eventos/eventos.component';
 import { AgregarEventoComponent } from './evento/agregar-evento/agregar-evento.component';
 import { EditarEventoComponent } from './evento/editar-evento/editar-evento.component';
-import { VerEventoComponent } from './evento/ver-evento/ver-evento.component';
 import { ClienteEventoComponent } from './evento/cliente-evento/cliente-evento.component';
 
 
@@ -50,7 +49,6 @@ import { ClienteEventoComponent } from './evento/cliente-evento/cliente-evento.c
     EventosComponent,
     AgregarEventoComponent,
     EditarEventoComponent,
-    VerEventoComponent,
     ClienteEventoComponent
   ],
   imports: [

@@ -42,8 +42,11 @@
         <td>{{evento.num_personas}}</td>
         <td>{{evento.fecha}}</td>
         <td>{{evento.direccion}}</td>
-      </tr>
+        <td><button [disabled]="loading" class="btn btn-secondary" (click)="updateEvento(evento)" >Editar</button></td>
+        <td><button [disabled]="loading" class="btn btn-danger" (click)="deleteEvento(evento, i)">Eliminar</button></td>
+        </tr>
       </tbody>
     </table>
   </div>
 </main>
+

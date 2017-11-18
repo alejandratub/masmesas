@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) { }
   login() {
     const credentials = {username: this.model.username, password: this.model.password};
-    console.log(credentials);
     this.auth.login(credentials).subscribe(data => {
       if (data) {
         this.router.navigate(['principal']);

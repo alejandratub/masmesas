@@ -14,9 +14,7 @@ export class ClienteComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('init');
     this.clienteService.getAllClientes().subscribe(data => {
-      console.log(data);
       this.clientes = data;
     }, err => {
       console.log(err);
@@ -29,7 +27,6 @@ export class ClienteComponent implements OnInit {
     this.clienteService.deleteCliente(cliente).subscribe(data => {
       alert('Cliente eliminado con éxito');
       this.clientes.splice(index, 1);
-      console.log(data);
     }, err => {
       console.log(err);
       alert('Error de conexion');

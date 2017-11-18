@@ -1,3 +1,30 @@
-<p>
-  editar-evento works!
-</p>
+<div class="container">
+
+  <h2>Agregar Evento</h2>
+  <form name="form" (ngSubmit)="f.form.valid && updateEvento()" #f="ngForm" novalidate>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !tipo.valid }">
+      <label for="tipo">Tipo</label>
+      <input type="text" class="form-control" name="tipo" [(ngModel)]="evento.tipo" #tipo="ngModel" required />
+      <div *ngIf="f.submitted && !tipo.valid" class="help-block">El tipo es necesario</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !num_personas.valid }">
+      <label for="num_personas">Numero de personas</label>
+      <input type="number" class="form-control" name="num_personas" [(ngModel)]="evento.num_personas" #num_personas="ngModel" required />
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !fecha.valid }">
+      <label for="fecha">Fecha</label>
+      <input type="date" class="form-control" name="fecha" [(ngModel)]="evento.fecha" #fecha="ngModel" required />
+      <div *ngIf="f.submitted && !fecha.valid" class="help-block">El fecha es incorrecto</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !direccion.valid }">
+      <label for="direccion">Direccion</label>
+      <input type="text" class="form-control" name="direccion" [(ngModel)]="evento.direccion" #direccion="ngModel" required />
+      <div *ngIf="f.submitted && !direccion.valid" class="help-block">La direccion es necesaria</div>
+    </div>
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Actualizar</button>
+    </div>
+  </form>
+
+</div>

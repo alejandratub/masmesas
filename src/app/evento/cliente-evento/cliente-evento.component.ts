@@ -3,6 +3,7 @@ import {Cliente} from '../../models/cliente';
 import {EventosService} from '../../services/eventos.service';
 import {Evento} from "../../models/eventos";
 import {ClienteService} from "../../services/cliente.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cliente-evento',
@@ -12,9 +13,25 @@ import {ClienteService} from "../../services/cliente.service";
 export class ClienteEventoComponent implements OnInit {
   cliente: Cliente;
   eventos: Array<Evento>;
-  constructor(public eventoService: EventosService, public clienteService: ClienteService) {
+  constructor(public eventoService: EventosService, public clienteService: ClienteService, private router: Router) {
+  }
+  updateEvento(evento) {
+    this.eventoService.setLocalEvento(evento);
+    this.router.navigate(['editar-evento']);
   }
 
+
+  deleteEvento(evento, index) {
+    this.eventoService.deleteEvento(evento).subscribe(data => {
+      alert('Evento eliminado con éxito');
+      this.eventos.splice(index, 1);
+      console.log(data);
+    }, err => {
+      console.log(err);
+      alert('Error de conexion');
+      // Error de conexion
+    });
+  }
 
   ngOnInit() {
     this.cliente = this.clienteService.getLocalCliente();

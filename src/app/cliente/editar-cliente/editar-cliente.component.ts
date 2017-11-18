@@ -11,7 +11,6 @@ import {Cliente} from "../../models/cliente";
 export class EditarClienteComponent implements OnInit {
   cliente : Cliente;
   constructor(private clienteService: ClienteService, private router: Router) {
-    this.cliente = new Cliente();
   }
 
   updateCliente() {
