@@ -14,6 +14,8 @@ import {EmpleadosService} from './services/empleados.service';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthService} from './services/auth.service';
 import {CanActivateTeam} from './guards/canactivateteam';
+import { LoginComponent } from './login/login.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -23,12 +25,14 @@ import {CanActivateTeam} from './guards/canactivateteam';
     PrincipalComponent,
     EditarEmpleadoComponent,
     EmpleadosComponent,
-    AgregarEmpleadoComponent
+    AgregarEmpleadoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     ApiService,
