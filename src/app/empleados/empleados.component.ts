@@ -10,7 +10,7 @@ export class EmpleadosComponent implements OnInit {
   empleados;
   constructor(public empleadoService: EmpleadosService) {
     this.empleados = new Array();
-    this.empleados = empleadoService.getEmpleados().toString();
+    this.empleados.push(empleadoService.getEmpleados().toString());
   }
 
   ngOnInit() {

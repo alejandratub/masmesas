@@ -9,6 +9,9 @@ import { PrincipalComponent } from './principal/principal.component';
 import { EditarEmpleadoComponent } from './editar-empleado/editar-empleado.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { AgregarEmpleadoComponent } from './agregar-empleado/agregar-empleado.component';
+import {ApiService} from './api.service';
+import {EmpleadosService} from './empleados.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -22,9 +25,13 @@ import { AgregarEmpleadoComponent } from './agregar-empleado/agregar-empleado.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    EmpleadosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
