@@ -9,7 +9,7 @@ export class AuthService {
     this.token = null;
   }
   login(credentials) {
-    this.api.post('login', credentials);
+    return this.api.post('Users/login', credentials);
   }
 
   isAuthenticated(): boolean {
