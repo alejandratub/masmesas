@@ -13,8 +13,8 @@ export class EventosService {
     return this.http.get('http://localhost:3000/api/eventos?access_token=' + this.auth.getToken())
       .map(res => res as Evento[] || []);
   }
-  addEvento(evento) {
-    return this.http.post('http://localhost:3000/api/eventos?access_token=' + this.auth.getToken(), evento);
+  addEvento(evento, cliente) {
+    return this.http.post('http://localhost:3000/api/clientes/' + cliente.id + '/eventos?access_token=' + this.auth.getToken(), evento);
   }
 
   updateEvento(evento) {
