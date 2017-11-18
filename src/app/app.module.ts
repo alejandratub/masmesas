@@ -12,8 +12,8 @@ import { AgregarEmpleadoComponent } from './agregar-empleado/agregar-empleado.co
 import {ApiService} from './services/api.service';
 import {EmpleadosService} from './services/empleados.service';
 import {HttpClientModule} from '@angular/common/http';
-import {CanActivateViaAuthGuard} from './guards/canactivateguard';
 import {AuthService} from './services/auth.service';
+import {CanActivateTeam} from './guards/canactivateteam';
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import {AuthService} from './services/auth.service';
     ApiService,
     EmpleadosService,
     AuthService,
-    CanActivateViaAuthGuard
+    CanActivateTeam
   ],
   bootstrap: [AppComponent]
 })
