@@ -24,6 +24,8 @@
         <td><button [disabled]="loading" class="btn btn-secondary" (click)="updateCliente(cliente)" >Editar</button></td>
         <td><button [disabled]="loading" class="btn btn-danger" (click)="deleteCliente(cliente, i)">Eliminar</button></td>
         <td><button [disabled]="loading" class="btn btn-info" (click)="verCliente(cliente)">Ver detalles</button></td>
+        <td><button [disabled]="loading" class="btn btn-success" (click)="verEventos(cliente)">Eventos</button></td>
+
       </tr>
 
       </tbody>

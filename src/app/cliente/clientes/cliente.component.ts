@@ -44,5 +44,10 @@ export class ClienteComponent implements OnInit {
     this.clienteService.setLocalCliente(cliente);
     this.router.navigate(['editar-cliente']);
   }
+  verEventos(cliente) {
+    this.clienteService.setLocalCliente(cliente);
+    this.router.navigate(['cliente-evento']);
+
+  }
 
 }

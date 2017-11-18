@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from './auth.service';
 import {Cliente} from '../models/cliente';
+import {Evento} from "../models/eventos";
 
 
 @Injectable()

@@ -27,6 +27,11 @@ import {ClienteService} from './services/cliente.service';
 import { AgregarClienteComponent } from './cliente/agregar-cliente/agregar-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
 import { VerClienteComponent } from './cliente/ver-cliente/ver-cliente.component';
+import { EventosComponent } from './evento/eventos/eventos.component';
+import { AgregarEventoComponent } from './evento/agregar-evento/agregar-evento.component';
+import { EditarEventoComponent } from './evento/editar-evento/editar-evento.component';
+import { VerEventoComponent } from './evento/ver-evento/ver-evento.component';
+import { ClienteEventoComponent } from './evento/cliente-evento/cliente-evento.component';
 
 
 @NgModule({
@@ -41,7 +46,12 @@ import { VerClienteComponent } from './cliente/ver-cliente/ver-cliente.component
     ClienteComponent,
     AgregarClienteComponent,
     EditarClienteComponent,
-    VerClienteComponent
+    VerClienteComponent,
+    EventosComponent,
+    AgregarEventoComponent,
+    EditarEventoComponent,
+    VerEventoComponent,
+    ClienteEventoComponent
   ],
   imports: [
     BrowserModule,

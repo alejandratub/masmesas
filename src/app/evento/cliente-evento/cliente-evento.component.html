@@ -1,5 +1,5 @@
 <main>
-  <h2>Cliente</h2>
+  <h2>Eventos {{cliente.nombre}}</h2>
   <div class="table-responsive">
     <div class="form-group">
       <button [disabled]="loading" class="btn btn-primary" routerLink="/clientes">Regresar</button>
@@ -23,9 +23,25 @@
         <td>{{cliente.email}}</td>
         <td>{{cliente.telefono}}</td>
         <td>{{cliente.direccion}}</td>
-
       </tr>
-
+      </tbody>
+    </table>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Numero de Personas</th>
+        <th>Fecha</th>
+        <th>Direccion</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let evento of eventos; let i = index;">
+        <td>{{evento.tipo}}</td>
+        <td>{{evento.num_personas}}</td>
+        <td>{{evento.fecha}}</td>
+        <td>{{evento.direccion}}</td>
+      </tr>
       </tbody>
     </table>
   </div>
