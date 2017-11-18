@@ -12,7 +12,10 @@ export class LoginComponent implements OnInit {
   login() {
     const credentials = {username: this.model.username, password: this.model.password};
     console.log(credentials);
-    this.auth.login(credentials);
+    this.auth.login(credentials).subscribe(data => {
+      console.log(data);
+    }, err => {
+    });
   }
 
   ngOnInit() {
