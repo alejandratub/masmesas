@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EmpleadosService} from '../../services/empleados.service';
+import {Empleado} from '../../models/empleado';
 
 @Component({
   selector: 'app-eliminar-empleado',
@@ -7,9 +8,8 @@ import {EmpleadosService} from '../../services/empleados.service';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent implements OnInit {
-  empleados;
+  empleados: Array<Empleado>;
   constructor(public empleadoService: EmpleadosService) {
-    this.empleados = new Array();
   }
 
   ngOnInit() {
@@ -30,7 +30,7 @@ export class EmpleadosComponent implements OnInit {
   }
   addEmpleado(empleado) {
     this.empleadoService.addEmpleado(empleado).subscribe(data => {
-      this.empleados = data;
+     // this.empleados = data;
     }, err => {
       console.log(err);
       // Error de conexion

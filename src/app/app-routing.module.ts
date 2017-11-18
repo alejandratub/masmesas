@@ -5,6 +5,7 @@ import {PrincipalComponent} from './principal/principal.component';
 import {EmpleadosComponent} from './empleado/empleados/empleados.component';
 import {CanActivateTeam} from './guards/canactivateteam';
 import {LoginComponent} from './login/login.component';
+import {ClienteComponent} from './cliente/clientes/cliente.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,10 @@ const routes: Routes = [
   {
     path: 'empleados', component: EmpleadosComponent, canActivate: [CanActivateTeam]
   },
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {
+    path: 'clientes', component: ClienteComponent, canActivate: [CanActivateTeam]
+  },
 
 
 ];

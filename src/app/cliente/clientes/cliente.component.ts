@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ClienteService} from '../../services/cliente.service';
+import {Cliente} from '../../models/cliente';
 
 @Component({
   selector: 'app-eliminar-cliente',
@@ -7,14 +8,14 @@ import {ClienteService} from '../../services/cliente.service';
   styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent implements OnInit {
-  clientes;
+  clientes: Array<Cliente>;
   constructor(public clienteService: ClienteService) {
-    this.clientes = new Array();
   }
 
   ngOnInit() {
     console.log('init');
     this.clienteService.getCliente().subscribe(data => {
+      console.log(data);
       this.clientes = data;
     }, err => {
       console.log(err);
@@ -30,7 +31,7 @@ export class ClienteComponent implements OnInit {
   }
   addCliente(cliente) {
     this.clienteService.addCliente(cliente).subscribe(data => {
-      this.clientes = data;
+      console.log(data);
     }, err => {
       console.log(err);
       // Error de conexion
