@@ -20,20 +20,18 @@ export class ClienteComponent implements OnInit {
     }, err => {
       console.log(err);
       // Error de conexion
+      alert('Error de conexion');
     });
-    /* this.addEmpleado({
-      nombre: 'string',
-      apellido: 'string',
-      sueldo: 0,
-      puesto: 'string',
-      telefono: 0,
-    }); */
   }
-  addCliente(cliente) {
-    this.clienteService.addCliente(cliente).subscribe(data => {
+
+  deleteCliente(cliente, index) {
+    this.clienteService.deleteCliente(cliente).subscribe(data => {
+      alert('Cliente eliminado con éxito');
+      this.clientes.splice(index, 1);
       console.log(data);
     }, err => {
       console.log(err);
+      alert('Error de conexion');
       // Error de conexion
     });
   }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ClienteService} from '../../services/cliente.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-editar-cliente',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarClienteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private clienteService: ClienteService, private router: Router) { }
+  updateCliente(cliente) {
+    this.clienteService.updateCliente(cliente).subscribe(data => {
+      alert('Cliente editado con éxito');
+      this.router.navigate(['clientes']);
+      console.log(data);
+    }, err => {
+      console.log(err);
+      alert('Error de conexion');
+      // Error de conexion
+    });
+  }
 
   ngOnInit() {
   }

@@ -6,21 +6,17 @@ import {EmpleadosComponent} from './empleado/empleados/empleados.component';
 import {CanActivateTeam} from './guards/canactivateteam';
 import {LoginComponent} from './login/login.component';
 import {ClienteComponent} from './cliente/clientes/cliente.component';
+import {AgregarClienteComponent} from './cliente/agregar-cliente/agregar-cliente.component';
 
 
 const routes: Routes = [
-  {
-    path: 'ver-empleados', component: VerEmpleadoComponent, canActivate: [CanActivateTeam]
-  },
-  {path: 'principal', component: PrincipalComponent, canActivate: [CanActivateTeam]},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {
-    path: 'empleados', component: EmpleadosComponent, canActivate: [CanActivateTeam]
-  },
   {path: 'login', component: LoginComponent},
-  {
-    path: 'clientes', component: ClienteComponent, canActivate: [CanActivateTeam]
-  },
+  {path: 'principal', component: PrincipalComponent, canActivate: [CanActivateTeam]},
+  {path: 'empleados', component: EmpleadosComponent, canActivate: [CanActivateTeam]},
+  {path: 'ver-empleados', component: VerEmpleadoComponent, canActivate: [CanActivateTeam]},
+  {path: 'clientes', component: ClienteComponent, canActivate: [CanActivateTeam]},
+  {path: 'agregar-cliente', component: AgregarClienteComponent, canActivate: [CanActivateTeam]}
 
 
 ];

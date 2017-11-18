@@ -12,7 +12,7 @@ export class EmpleadosService {
     return this.http.get('http://localhost:3000/api/empleados?access_token=' + this.auth.getToken())
       .map(res => res as Empleado[] || []);
   }
-  addEmpleado(empleado){
+  addEmpleado(empleado) {
     return this.http.post('http://localhost:3000/api/empleados?access_token=' + this.auth.getToken(), empleado);
   }
 
