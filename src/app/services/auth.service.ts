@@ -1,11 +1,9 @@
 import {Injectable} from '@angular/core';
-import {ApiService} from './api.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import {HttpClient} from '@angular/common/http';
-import {User} from '../models/user';
 
 @Injectable()
 export class AuthService {
