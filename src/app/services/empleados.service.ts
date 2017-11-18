@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
-import {ApiService} from './api.service';
+import {HttpClient} from '@angular/common/http';
+import {AuthService} from './auth.service';
 
 
 @Injectable()
 export class EmpleadosService {
 
-  constructor(public api: ApiService) { }
-  getEmpleados(params? ) {
-    return this.api.get('/empleados', params);
+  constructor(public http: HttpClient, private auth: AuthService) { }
+  getEmpleados() {
+    return this.http.get('http://localhost:3000/api/empleados?access_token=' + this.auth.getToken());
+  }
+  addEmpleado(empleado){
+    return this.http.post('http://localhost:3000/api/empleados?access_token=' + this.auth.getToken(), empleado);
   }
 
 }

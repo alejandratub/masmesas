@@ -10,10 +10,31 @@ export class EmpleadosComponent implements OnInit {
   empleados;
   constructor(public empleadoService: EmpleadosService) {
     this.empleados = new Array();
-    this.empleados.push(empleadoService.getEmpleados().toString());
   }
 
   ngOnInit() {
+    console.log('init');
+    this.empleadoService.getEmpleados().subscribe(data => {
+        this.empleados = data;
+      }, err => {
+      console.log(err);
+        // Error de conexion
+      });
+    /* this.addEmpleado({
+      nombre: 'string',
+      apellido: 'string',
+      sueldo: 0,
+      puesto: 'string',
+      telefono: 0,
+    }); */
+  }
+  addEmpleado(empleado) {
+    this.empleadoService.addEmpleado(empleado).subscribe(data => {
+      this.empleados = data;
+    }, err => {
+      console.log(err);
+      // Error de conexion
+    });
   }
 
 }

@@ -16,6 +16,7 @@ import {AuthService} from './services/auth.service';
 import {CanActivateTeam} from './guards/canactivateteam';
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
+import {TokenInterceptor} from './guards/tokeninterceptor';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {FormsModule} from '@angular/forms';
     ApiService,
     EmpleadosService,
     AuthService,
-    CanActivateTeam
+    CanActivateTeam,
+    TokenInterceptor
   ],
   bootstrap: [AppComponent]
 })
