@@ -3,13 +3,24 @@ import {RouterModule, Routes} from '@angular/router';
 import {VerEmpleadoComponent} from './ver_empleado/empleado.component';
 import {PrincipalComponent} from './principal/principal.component';
 import {EmpleadosComponent} from './empleados/empleados.component';
+import {CanActivateViaAuthGuard} from './guards/canactivateguard';
 
 
 const routes: Routes = [
-  {path: 'ver-empleados', component: VerEmpleadoComponent},
+  {
+    path: 'ver-empleados', component: VerEmpleadoComponent, canActivate: [
+    'CanActivateViaAuthGuard',
+    CanActivateViaAuthGuard
+  ]
+  },
   {path: 'principal', component: PrincipalComponent},
   {path: '', redirectTo: '/principal', pathMatch: 'full'},
-  {path: 'empleados', component: EmpleadosComponent}
+  {
+    path: 'empleados', component: EmpleadosComponent, canActivate: [
+    'CanActivateViaAuthGuard',
+    CanActivateViaAuthGuard
+  ]
+  }
 
 ];
 
