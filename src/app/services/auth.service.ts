@@ -5,11 +5,12 @@ export class AuthService {
   token: string;
 
   constructor() {
+    this.token = null;
   }
   login() {
   }
 
   isAuthenticated(): boolean {
-    return true;
+    return !!this.token;
   }
 }
