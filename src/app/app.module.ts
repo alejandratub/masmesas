@@ -10,8 +10,8 @@ import { EditarEmpleadoComponent } from './editar-empleado/editar-empleado.compo
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { AgregarEmpleadoComponent } from './agregar-empleado/agregar-empleado.component';
 import {EmpleadosService} from './empleados.service';
-import {ApiService} from './api.service';
 import {HttpClientModule} from '@angular/common/http';
+import {CanActivateViaAuthGuard} from './canactivateguard';
 
 
 @NgModule({
@@ -29,8 +29,8 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    ApiService,
-    EmpleadosService
+    EmpleadosService,
+    CanActivateViaAuthGuard
   ],
   bootstrap: [AppComponent]
 })
