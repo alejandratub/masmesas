@@ -8,7 +8,7 @@ import {Evento} from '../../models/eventos';
 import {Cotizacion} from '../../models/cotizacion';
 import {MueblesService} from '../../services/muebles.service';
 import {DecoracionsService} from '../../services/decoracion.service';
-import {EventosService} from "../../services/eventos.service";
+import {EventosService} from '../../services/eventos.service';
 
 @Component({
   selector: 'app-nueva-cotizacion',
@@ -21,9 +21,13 @@ export class NuevaCotizacionComponent implements OnInit {
   muebles: Array<Mueble>;
   decoraciones: Array<Decoracion>;
   cotizacion: Cotizacion;
+  selectedMueble: number;
+  cantidadMueble: Array<number>;
+  cm: number;
   constructor(private clienteService: ClienteService, private eventoService: EventosService, private router: Router,
               private muebleService: MueblesService, private decoracionService: DecoracionsService) {
-    // this.clientes = new Array<Cliente>();
+    this.selectedMueble = 0;
+    this.cm = 0;
     this.cotizacion = new Cotizacion();
   }
   changeCliente(cliente){
@@ -36,11 +40,12 @@ export class NuevaCotizacionComponent implements OnInit {
       // Error de conexion
     });
   }
-  changeMueble(mueble){
-    console.log(mueble);
-    const x = prompt('Seleccione los muebles que deseas agregar');
-    console.log(x);
-
+  changeMueble(index) {
+    this.selectedMueble = index;
+  }
+  addMueble(){
+    this.cantidadMueble[this.selectedMueble] = this.cm;
+    console.log('se agregaron ' + this.cantidadMueble[this.selectedMueble] + ' tipo ' + this.muebles[this.selectedMueble].nombre);
   }
   ngOnInit() {
     this.clienteService.getAllClientes().subscribe(data => {
@@ -53,6 +58,7 @@ export class NuevaCotizacionComponent implements OnInit {
     });
     this.muebleService.getAllMuebles().subscribe(data2 => {
       this.muebles = data2;
+      this.cantidadMueble = new Array<number>(this.muebles.length);
       console.log(data2);
     }, err => {
       console.log(err);

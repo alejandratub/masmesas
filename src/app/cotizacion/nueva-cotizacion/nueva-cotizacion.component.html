@@ -1,7 +1,7 @@
 <div class="container">
 
   <h2>Nueva Cotizacion</h2>
-  <form name="form" (ngSubmit)="f.form.valid && addCliente()" #f="ngForm" novalidate >
+  <form name="form" (ngSubmit)="f.form.valid && addCliente()" #f="ngForm" novalidate>
     <div class="row">
       <div class="col">
         <label for="clientes">Clientes</label><br>
@@ -24,21 +24,38 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="!!muebles">
       <div class="col">
         <div class="dropdown">
           <label for="muebles">Muebles</label><br>
           <select name="muebles">
-            <option *ngFor="let mueble of muebles"
-                    (click)="changeMueble(mueble)">
+            <option *ngFor="let mueble of muebles; let i = index;"
+                    (click)="changeMueble(i)">
               {{mueble.nombre}}
             </option>
           </select>
         </div>
       </div>
+      <div class="col">
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
+          <label for="cantidad">Disponible</label>
+          <p>{{muebles[selectedMueble].cantidad}}</p>
+        </div>
+      </div>
       <div clas="col">
-   </div>
-    <div class = row>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
+          <label for="cantidad_mueble">Cantidad</label>
+          <input type="number" class="form-control" name="cantidad_mueble" [(ngModel)]="cm"
+                 #cantidad_mueble="ngModel" required/>
+          <div *ngIf="f.submitted && !cantidad_mueble.valid" class="help-block">La cantidad es incorrecta</div>
+        </div>
+      </div>
+      <div class="col">
+        <label> </label><br>
+        <button [disabled]="loading" class="btn btn-primary" (click)="addMueble()">+</button>
+      </div>
+    </div>
+    <div class=row>
       <div class="col">
         <div class="dropdown">
           <label for="decoracion">Decoracion</label><br>
@@ -48,18 +65,37 @@
               {{decoracion.nombre}}
             </option>
           </select>
+        </div>
       </div>
-    </div>
+      <div class="col">
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
+          <label for="cantidad_decoracion">Cantidad disponible</label>
+          <p></p>
+        </div>
+        </div>
+      <div clas="col">
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
+          <label for="cantidad_decoracion">Cantidad a rentar</label>
+          <input type="number" class="form-control" name="cantidad_decoracion"
+                 [(ngModel)]="cotizacion.cantidad_decoracion" #cantidad_decoracion="ngModel" required/>
+          <div *ngIf="f.submitted && !cantidad_decoracion.valid" class="help-block">La cantidad es incorrecta</div>
+        </div>
+      </div>
+      <div class="col">
+        <label> </label><br>
+        <button [disabled]="loading" class="btn btn-primary">+</button>
+      </div>
     </div>
 
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
       <label for="precio_montaje">Precio de montaje</label>
-      <input type="number" class="form-control" name="precio_montaje" [(ngModel)]="cotizacion.precio_montaje" #precio_montaje="ngModel" required />
+      <input type="number" class="form-control" name="precio_montaje" [(ngModel)]="cotizacion.precio_montaje"
+             #precio_montaje="ngModel" required/>
       <div *ngIf="f.submitted && !precio_montaje.valid" class="help-block">El precio montaje es incorrecto</div>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
       <label for="flete">Flete</label>
-      <input type="number" class="form-control" name="flete" [(ngModel)]="cotizacion.flete" #flete="ngModel" required />
+      <input type="number" class="form-control" name="flete" [(ngModel)]="cotizacion.flete" #flete="ngModel" required/>
       <div *ngIf="f.submitted && !flete.valid" class="help-block">El flete es incorrecto</div>
     </div>
     <div class="form-group">
