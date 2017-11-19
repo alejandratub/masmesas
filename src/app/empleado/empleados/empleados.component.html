@@ -1,13 +1,18 @@
 <h2>Section title</h2>
 <div class="table-responsive">
+  <div class="form-group">
+    <button [disabled]="loading" class="btn btn-primary" routerLink="/agregar-cliente">Agregar Cliente</button>
+  </div>
   <table class="table table-striped">
     <thead>
     <tr>
-      <th>#</th>
-      <th>Header</th>
-      <th>Header</th>
-      <th>Header</th>
-      <th>Header</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Sueldo</th>
+      <th>Puesto</th>
+      <th>Teléfono</th>
+      <th> </th>
+      <th> </th>
     </tr>
     </thead>
     <tbody>
@@ -17,6 +22,9 @@
       <td>{{empleado.sueldo}}</td>
       <td>{{empleado.puesto}}</td>
       <td>{{empleado.telefono}}</td>
+      <td><button [disabled]="loading" class="btn btn-secondary" (click)="updateEmpleado(empleado)" >Editar</button></td>
+      <td><button [disabled]="loading" class="btn btn-danger" (click)="deleteEmpleado(empleado, i)">Eliminar</button></td>
+
     </tr>
 
     </tbody>

@@ -8,12 +8,27 @@ import {Empleado} from '../models/empleado';
 export class EmpleadosService {
 
   constructor(public http: HttpClient, private auth: AuthService) { }
-  getEmpleados() {
+  getAllEmpleados() {
     return this.http.get('http://localhost:3000/api/empleados?access_token=' + this.auth.getToken())
       .map(res => res as Empleado[] || []);
   }
-  addEmpleado(empleado) {
-    return this.http.post('http://localhost:3000/api/empleados?access_token=' + this.auth.getToken(), empleado);
+  addEmpleado(empleados) {
+    return this.http.post('http://localhost:3000/api/empleados?access_token=' + this.auth.getToken(), empleados);
+  }
+  updateEmpleado(empleados) {
+    return this.http.patch('http://localhost:3000/api/empleados/' + empleados.id + '?access_token=' + this.auth.getToken(), empleados);
   }
 
+  deleteEmpleado(empleados) {
+    return this.http.delete('http://localhost:3000/api/empleados/' + empleados.id + '?access_token=' + this.auth.getToken(), {});
+  }
+  getEmpleado(empleados) {
+    return this.http.get('http://localhost:3000/api/empleados/' + empleados.id + '?access_token=' + this.auth.getToken(), {});
+  }
+  getLocalEmpleado() {
+    return this.empleados;
+  }
+  setLocalEmpleado(empleados) {
+    this.empleados = empleados;
+  }
 }

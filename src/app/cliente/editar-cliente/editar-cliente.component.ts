@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ClienteService} from '../../services/cliente.service';
 import {Router} from '@angular/router';
-import {Cliente} from "../../models/cliente";
+import {Cliente} from '../../models/cliente';
 
 @Component({
   selector: 'app-editar-cliente',
@@ -9,7 +9,7 @@ import {Cliente} from "../../models/cliente";
   styleUrls: ['./editar-cliente.component.css']
 })
 export class EditarClienteComponent implements OnInit {
-  cliente : Cliente;
+  cliente: Cliente;
   constructor(private clienteService: ClienteService, private router: Router) {
   }
 
