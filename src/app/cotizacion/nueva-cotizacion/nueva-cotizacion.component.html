@@ -55,13 +55,13 @@
         <button [disabled]="loading" class="btn btn-primary" (click)="addMueble()">+</button>
       </div>
     </div>
-    <div class=row>
+    <div class=row *ngIf="!!decoraciones">
       <div class="col">
-        <div class="dropdown">
+        <div class="dropdown" >
           <label for="decoracion">Decoracion</label><br>
           <select name="decoracion">
-            <option *ngFor="let decoracion of decoraciones"
-                    [value]="decoracion">
+            <option *ngFor="let decoracion of decoraciones; let i = index;"
+                    (click)="changeDecoracion(i)">
               {{decoracion.nombre}}
             </option>
           </select>
@@ -70,20 +70,20 @@
       <div class="col">
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
           <label for="cantidad_decoracion">Cantidad disponible</label>
-          <p></p>
+          <p>{{decoraciones[selectedDecoracion].cantidad}}</p>
         </div>
         </div>
       <div clas="col">
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
           <label for="cantidad_decoracion">Cantidad a rentar</label>
           <input type="number" class="form-control" name="cantidad_decoracion"
-                 [(ngModel)]="cotizacion.cantidad_decoracion" #cantidad_decoracion="ngModel" required/>
+                 [(ngModel)]="cd" #cantidad_decoracion="ngModel" required/>
           <div *ngIf="f.submitted && !cantidad_decoracion.valid" class="help-block">La cantidad es incorrecta</div>
         </div>
       </div>
       <div class="col">
         <label> </label><br>
-        <button [disabled]="loading" class="btn btn-primary">+</button>
+        <button [disabled]="loading" class="btn btn-primary" (click)="addDecoracion()">+</button>
       </div>
     </div>
 

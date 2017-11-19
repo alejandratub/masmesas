@@ -24,11 +24,16 @@ export class NuevaCotizacionComponent implements OnInit {
   selectedMueble: number;
   cantidadMueble: Array<number>;
   cm: number;
+  selectedDecoracion: number;
+  cantidadDecoracion: Array<number>;
+  cd: number;
   constructor(private clienteService: ClienteService, private eventoService: EventosService, private router: Router,
               private muebleService: MueblesService, private decoracionService: DecoracionsService) {
     this.selectedMueble = 0;
     this.cm = 0;
     this.cotizacion = new Cotizacion();
+    this.selectedDecoracion = 0;
+    this.cd = 0;
   }
   changeCliente(cliente){
     console.log(cliente);
@@ -46,6 +51,13 @@ export class NuevaCotizacionComponent implements OnInit {
   addMueble(){
     this.cantidadMueble[this.selectedMueble] = this.cm;
     console.log('se agregaron ' + this.cantidadMueble[this.selectedMueble] + ' tipo ' + this.muebles[this.selectedMueble].nombre);
+  }
+  changeDecoracion(index) {
+    this.selectedDecoracion = index;
+  }
+  addDecoracion() {
+    this.cantidadDecoracion[this.selectedDecoracion] = this.cd;
+    console.log('se agregaron ' + this.cantidadDecoracion[this.selectedDecoracion] + ' tipo ' + this.decoraciones[this.selectedDecoracion].nombre);
   }
   ngOnInit() {
     this.clienteService.getAllClientes().subscribe(data => {
@@ -67,6 +79,7 @@ export class NuevaCotizacionComponent implements OnInit {
     });
     this.decoracionService.getAllDecoracions().subscribe(data3 => {
       this.decoraciones = data3;
+      this.cantidadDecoracion = new Array<number>(this.decoraciones.length);
       console.log(data3);
     }, err => {
       console.log(err);
