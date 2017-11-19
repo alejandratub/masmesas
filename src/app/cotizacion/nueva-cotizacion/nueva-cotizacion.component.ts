@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ClienteService} from '../../services/cliente.service';
-import {EmpleadosService} from '../../services/empleados.service';
 import {Router} from '@angular/router';
 import {Cliente} from '../../models/cliente';
 import {Decoracion} from '../../models/decoracion';
@@ -9,6 +8,7 @@ import {Evento} from '../../models/eventos';
 import {Cotizacion} from '../../models/cotizacion';
 import {MueblesService} from '../../services/muebles.service';
 import {DecoracionsService} from '../../services/decoracion.service';
+import {EventosService} from "../../services/eventos.service";
 
 @Component({
   selector: 'app-nueva-cotizacion',
@@ -21,12 +21,25 @@ export class NuevaCotizacionComponent implements OnInit {
   muebles: Array<Mueble>;
   decoraciones: Array<Decoracion>;
   cotizacion: Cotizacion;
-  constructor(private clienteService: ClienteService, private empleadoService: EmpleadosService, private router: Router,
+  constructor(private clienteService: ClienteService, private eventoService: EventosService, private router: Router,
               private muebleService: MueblesService, private decoracionService: DecoracionsService) {
     // this.clientes = new Array<Cliente>();
     this.cotizacion = new Cotizacion();
   }
-  selectCliente(cliente){
+  changeCliente(cliente){
+    console.log(cliente);
+    this.eventoService.getEventoCliente(cliente).subscribe(data => {
+      this.eventos = data;
+    }, err => {
+      console.log(err);
+      alert('Error de conexion');
+      // Error de conexion
+    });
+  }
+  changeMueble(mueble){
+    console.log(mueble);
+    const x = prompt('Seleccione los muebles que deseas agregar');
+    console.log(x);
 
   }
   ngOnInit() {

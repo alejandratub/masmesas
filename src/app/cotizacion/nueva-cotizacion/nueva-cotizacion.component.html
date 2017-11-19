@@ -1,13 +1,12 @@
 <div class="container">
 
   <h2>Nueva Cotizacion</h2>
-  <form name="form" (ngSubmit)="f.form.valid && addCliente()" #f="ngForm" novalidate>
+  <form name="form" (ngSubmit)="f.form.valid && addCliente()" #f="ngForm" novalidate >
     <div class="row">
       <div class="col">
         <label for="clientes">Clientes</label><br>
-        <select name="clientes">
-          <option *ngFor="let cliente of clientes"
-                  [value]="cliente">
+        <select>
+          <option *ngFor="let cliente of clientes" (click)="changeCliente(cliente)">
             {{cliente.nombre}} {{cliente.apellido}}
           </option>
         </select>
@@ -24,17 +23,22 @@
           </select>
         </div>
       </div>
+    </div>
+    <div class="row">
       <div class="col">
         <div class="dropdown">
           <label for="muebles">Muebles</label><br>
           <select name="muebles">
             <option *ngFor="let mueble of muebles"
-                    [value]="mueble">
+                    (click)="changeMueble(mueble)">
               {{mueble.nombre}}
             </option>
           </select>
         </div>
       </div>
+      <div clas="col">
+   </div>
+    <div class = row>
       <div class="col">
         <div class="dropdown">
           <label for="decoracion">Decoracion</label><br>
