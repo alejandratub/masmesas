@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MueblesService} from "../../services/muebles.service";
-import {Router} from "@angular/router";
-import {Mueble} from "../../models/muebles";
+import {MueblesService} from '../../services/muebles.service';
+import {Router} from '@angular/router';
+import {Mueble} from '../../models/muebles';
 
 @Component({
   selector: 'app-editar-mueble',

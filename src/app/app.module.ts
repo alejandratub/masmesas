@@ -34,6 +34,9 @@ import { NuevaCotizacionComponent } from './cotizacion/nueva-cotizacion/nueva-co
 import { MueblesComponent } from './mueble/muebles/muebles.component';
 import { AgregarMuebleComponent } from './mueble/agregar-mueble/agregar-mueble.component';
 import { EditarMuebleComponent } from './mueble/editar-mueble/editar-mueble.component';
+import { DecoracionesComponent } from './decoracion/decoraciones/decoraciones.component';
+import { AgregarDecoracionComponent } from './decoracion/agregar-decoracion/agregar-decoracion.component';
+import { EditarDecoracionComponent } from './decoracion/editar-decoracion/editar-decoracion.component';
 
 
 @NgModule({
@@ -55,7 +58,10 @@ import { EditarMuebleComponent } from './mueble/editar-mueble/editar-mueble.comp
     NuevaCotizacionComponent,
     MueblesComponent,
     AgregarMuebleComponent,
-    EditarMuebleComponent
+    EditarMuebleComponent,
+    DecoracionesComponent,
+    AgregarDecoracionComponent,
+    EditarDecoracionComponent
   ],
   imports: [
     BrowserModule,

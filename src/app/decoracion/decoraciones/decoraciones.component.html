@@ -1,0 +1,34 @@
+<head>
+
+</head>
+<body>
+<h2>Decoracion</h2>
+<div class="table-responsive">
+  <div class="form-group">
+    <button [disabled]="loading" class="btn btn-primary" routerLink="/agregar-decoracion">Agregar Decoracion</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Cantidad</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let decoracion of decoracions;">
+      <td>{{decoracion.nombre}}</td>
+      <td>{{decoracion.tipo}}</td>
+      <td>{{decoracion.cantidad}}</td>
+      <td><button [disabled]="loading" class="btn btn-secondary" (click)="updateDecoracion(decoracion)" >Editar</button></td>
+      <td><button [disabled]="loading" class="btn btn-danger" (click)="deleteDecoracion(decoracion, i)">Eliminar</button></td>
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+</body>

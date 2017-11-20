@@ -18,6 +18,9 @@ import {EditarEmpleadoComponent} from './empleado/editar-empleado/editar-emplead
 import {MueblesComponent} from './mueble/muebles/muebles.component';
 import {AgregarMuebleComponent} from './mueble/agregar-mueble/agregar-mueble.component';
 import {EditarMuebleComponent} from './mueble/editar-mueble/editar-mueble.component';
+import {EditarDecoracionComponent} from './decoracion/editar-decoracion/editar-decoracion.component';
+import {AgregarDecoracionComponent} from './decoracion/agregar-decoracion/agregar-decoracion.component';
+import {DecoracionesComponent} from './decoracion/decoraciones/decoraciones.component';
 
 
 const routes: Routes = [
@@ -44,6 +47,10 @@ const routes: Routes = [
   {path: 'muebles', component: MueblesComponent, canActivate: [CanActivateTeam]},
   {path: 'agregar-mueble', component: AgregarMuebleComponent, canActivate: [CanActivateTeam]},
   {path: 'editar-mueble', component: EditarMuebleComponent, canActivate: [CanActivateTeam]},
+  // decoracion
+  {path: 'agregar-decoracion', component: AgregarDecoracionComponent, canActivate: [CanActivateTeam]},
+  {path: 'editar-decoracion', component: EditarDecoracionComponent, canActivate: [CanActivateTeam]},
+  {path: 'decoracion', component: DecoracionesComponent, canActivate: [CanActivateTeam]}
 
 
 
