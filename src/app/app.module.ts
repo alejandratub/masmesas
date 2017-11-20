@@ -37,6 +37,11 @@ import { EditarMuebleComponent } from './mueble/editar-mueble/editar-mueble.comp
 import { DecoracionesComponent } from './decoracion/decoraciones/decoraciones.component';
 import { AgregarDecoracionComponent } from './decoracion/agregar-decoracion/agregar-decoracion.component';
 import { EditarDecoracionComponent } from './decoracion/editar-decoracion/editar-decoracion.component';
+import { PagosComponent } from './pago/pagos/pagos.component';
+import { AgregarPagoComponent } from './pago/agregar-pago/agregar-pago.component';
+import { EditarPagoComponent } from './pago/editar-pago/editar-pago.component';
+import { VerPagoComponent } from './pago/ver-pago/ver-pago.component';
+import { PagoCotizacionComponent } from './pago/pago-cotizacion/pago-cotizacion.component';
 
 
 @NgModule({
@@ -61,7 +66,12 @@ import { EditarDecoracionComponent } from './decoracion/editar-decoracion/editar
     EditarMuebleComponent,
     DecoracionesComponent,
     AgregarDecoracionComponent,
-    EditarDecoracionComponent
+    EditarDecoracionComponent,
+    PagosComponent,
+    AgregarPagoComponent,
+    EditarPagoComponent,
+    VerPagoComponent,
+    PagoCotizacionComponent
   ],
   imports: [
     BrowserModule,

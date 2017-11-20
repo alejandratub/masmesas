@@ -1,0 +1,32 @@
+<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+  <h2>Pagos</h2>
+  <div class="table-responsive">
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary" routerLink="/agregar-pago">Agregar Pago</button>
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Forma de pago</th>
+        <th>Fecha</th>
+        <th></th>
+        <th></th>
+
+        <th> </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pago of pagos; let i = index;">
+        <td>{{pago.forma_pago}}</td>
+        <td>{{pago.fecha}}</td>
+        <td><button [disabled]="loading" class="btn btn-secondary" (click)="updatePago(pago)" >Editar</button></td>
+        <td><button [disabled]="loading" class="btn btn-danger" (click)="deletePago(pago, i)">Eliminar</button></td>
+        <td><button [disabled]="loading" class="btn btn-info" (click)="verPago(pago)">Ver detalles</button></td>
+        <td><button [disabled]="loading" class="btn btn-success" (click)="verCotizacion(pago)">Cotizacion</button></td>
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</main>

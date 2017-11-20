@@ -21,6 +21,10 @@ import {EditarMuebleComponent} from './mueble/editar-mueble/editar-mueble.compon
 import {EditarDecoracionComponent} from './decoracion/editar-decoracion/editar-decoracion.component';
 import {AgregarDecoracionComponent} from './decoracion/agregar-decoracion/agregar-decoracion.component';
 import {DecoracionesComponent} from './decoracion/decoraciones/decoraciones.component';
+import {PagosComponent} from './pago/pagos/pagos.component';
+import {AgregarPagoComponent} from './pago/agregar-pago/agregar-pago.component';
+import {EditarPagoComponent} from './pago/editar-pago/editar-pago.component';
+import {VerPagoComponent} from './pago/ver-pago/ver-pago.component';
 
 
 const routes: Routes = [
@@ -50,7 +54,12 @@ const routes: Routes = [
   // decoracion
   {path: 'agregar-decoracion', component: AgregarDecoracionComponent, canActivate: [CanActivateTeam]},
   {path: 'editar-decoracion', component: EditarDecoracionComponent, canActivate: [CanActivateTeam]},
-  {path: 'decoracion', component: DecoracionesComponent, canActivate: [CanActivateTeam]}
+  {path: 'decoracion', component: DecoracionesComponent, canActivate: [CanActivateTeam]},
+  // pagos
+  {path: 'pagos', component: PagosComponent, canActivate: [CanActivateTeam]},
+  {path: 'agregar-pago', component: AgregarPagoComponent, canActivate: [CanActivateTeam]},
+  {path: 'editar-pago', component: EditarPagoComponent, canActivate: [CanActivateTeam]},
+  {path: 'ver-pago', component: VerPagoComponent, canActivate: [CanActivateTeam]}
 
 
 
