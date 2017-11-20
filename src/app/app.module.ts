@@ -71,7 +71,7 @@ import { PagoCotizacionComponent } from './pago/pago-cotizacion/pago-cotizacion.
     AgregarPagoComponent,
     EditarPagoComponent,
     VerPagoComponent,
-    PagoCotizacionComponent
+    PagoCotizacionComponent,
   ],
   imports: [
     BrowserModule,

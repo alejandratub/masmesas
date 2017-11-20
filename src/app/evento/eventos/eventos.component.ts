@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EventosService} from '../../services/eventos.service';
 import {Router} from '@angular/router';
 import {Evento} from '../../models/eventos';
-import {Cliente} from "../../models/cliente";
+import {Cliente} from '../../models/cliente';
 
 @Component({
   selector: 'app-eventos',
