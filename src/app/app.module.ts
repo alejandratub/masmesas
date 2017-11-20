@@ -31,6 +31,9 @@ import { AgregarEventoComponent } from './evento/agregar-evento/agregar-evento.c
 import { EditarEventoComponent } from './evento/editar-evento/editar-evento.component';
 import { ClienteEventoComponent } from './evento/cliente-evento/cliente-evento.component';
 import { NuevaCotizacionComponent } from './cotizacion/nueva-cotizacion/nueva-cotizacion.component';
+import { MueblesComponent } from './mueble/muebles/muebles.component';
+import { AgregarMuebleComponent } from './mueble/agregar-mueble/agregar-mueble.component';
+import { EditarMuebleComponent } from './mueble/editar-mueble/editar-mueble.component';
 
 
 @NgModule({
@@ -49,7 +52,10 @@ import { NuevaCotizacionComponent } from './cotizacion/nueva-cotizacion/nueva-co
     AgregarEventoComponent,
     EditarEventoComponent,
     ClienteEventoComponent,
-    NuevaCotizacionComponent
+    NuevaCotizacionComponent,
+    MueblesComponent,
+    AgregarMuebleComponent,
+    EditarMuebleComponent
   ],
   imports: [
     BrowserModule,

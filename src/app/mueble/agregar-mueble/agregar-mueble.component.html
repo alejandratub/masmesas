@@ -1,0 +1,31 @@
+<div class="container">
+
+  <h2>Agregar Mueble</h2>
+  <form name="form" (ngSubmit)="f.form.valid && addMueble()" #f="ngForm" novalidate>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !nombre.valid }">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="mueble.nombre" #nombre="ngModel" required />
+      <div *ngIf="f.submitted && !nombre.valid" class="help-block">El nombre es incorrecto</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !tipo.valid }">
+      <label for="tipo">Tipo</label>
+      <input type="text" class="form-control" name="tipo" [(ngModel)]="mueble.tipo" #tipo="ngModel" required />
+      <div *ngIf="f.submitted && !tipo.valid" class="help-block">El tipo es incorrecto</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !cantidad.valid }">
+      <label for="cantidad">Cantidad</label>
+      <input type="number" class="form-control" name="cantidad" [(ngModel)]="mueble.cantidad" #cantidad="ngModel" required />
+      <div *ngIf="f.submitted && !cantidad.valid" class="help-block">El cantidad es incorrecto</div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !costo_renta.valid }">
+      <label for="costo_renta">Costo de renta</label>
+      <input type="number" class="form-control" name="costo_renta" [(ngModel)]="mueble.costo_renta" #costo_renta="ngModel" required />
+      <div *ngIf="f.submitted && !costo_renta.valid" class="help-block">El costo_renta es incorrecto</div>
+    </div>
+
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Agregar</button>
+    </div>
+  </form>
+
+</div>

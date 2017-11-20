@@ -1,0 +1,36 @@
+<head>
+
+</head>
+<body>
+<h2>Muebles</h2>
+<div class="table-responsive">
+  <div class="form-group">
+    <button [disabled]="loading" class="btn btn-primary" routerLink="/agregar-mueble">Agregar Mueble</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Cantidad</th>
+      <th>Costo de renta</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let mueble of muebles;">
+      <td>{{mueble.nombre}}</td>
+      <td>{{mueble.tipo}}</td>
+      <td>{{mueble.cantidad}}</td>
+      <td>{{mueble.costo_renta}}</td>
+      <td><button [disabled]="loading" class="btn btn-secondary" (click)="updateMueble(mueble)" >Editar</button></td>
+      <td><button [disabled]="loading" class="btn btn-danger" (click)="deleteMueble(mueble, i)">Eliminar</button></td>
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+</body>

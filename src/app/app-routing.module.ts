@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {VerEmpleadoComponent} from './empleado/ver_empleado/empleado.component';
 import {PrincipalComponent} from './principal/principal.component';
 import {EmpleadosComponent} from './empleado/empleados/empleados.component';
 import {CanActivateTeam} from './guards/canactivateteam';
@@ -13,9 +12,12 @@ import {VerClienteComponent} from './cliente/ver-cliente/ver-cliente.component';
 import {ClienteEventoComponent} from './evento/cliente-evento/cliente-evento.component';
 import {AgregarEventoComponent} from './evento/agregar-evento/agregar-evento.component';
 import {EditarEventoComponent} from './evento/editar-evento/editar-evento.component';
-import {EventosComponent} from "./evento/eventos/eventos.component";
-import {NuevaCotizacionComponent} from "./cotizacion/nueva-cotizacion/nueva-cotizacion.component";
-import {EditarEmpleadoComponent} from "./empleado/editar-empleado/editar-empleado.component";
+import {EventosComponent} from './evento/eventos/eventos.component';
+import {NuevaCotizacionComponent} from './cotizacion/nueva-cotizacion/nueva-cotizacion.component';
+import {EditarEmpleadoComponent} from './empleado/editar-empleado/editar-empleado.component';
+import {MueblesComponent} from './mueble/muebles/muebles.component';
+import {AgregarMuebleComponent} from './mueble/agregar-mueble/agregar-mueble.component';
+import {EditarMuebleComponent} from './mueble/editar-mueble/editar-mueble.component';
 
 
 const routes: Routes = [
@@ -38,6 +40,10 @@ const routes: Routes = [
   {path: 'editar-evento', component: EditarEventoComponent, canActivate: [CanActivateTeam]},
   // cotizaciones
   {path: 'nueva-cotizacion', component: NuevaCotizacionComponent, canActivate: [CanActivateTeam]},
+  // muebles
+  {path: 'muebles', component: MueblesComponent, canActivate: [CanActivateTeam]},
+  {path: 'agregar-mueble', component: AgregarMuebleComponent, canActivate: [CanActivateTeam]},
+  {path: 'editar-mueble', component: EditarMuebleComponent, canActivate: [CanActivateTeam]},
 
 
 

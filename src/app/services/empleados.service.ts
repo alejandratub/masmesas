@@ -6,7 +6,7 @@ import {Empleado} from '../models/empleado';
 
 @Injectable()
 export class EmpleadosService {
-
+  empleados: Empleado;
   constructor(public http: HttpClient, private auth: AuthService) { }
   getAllEmpleados() {
     return this.http.get('http://localhost:3000/api/empleados?access_token=' + this.auth.getToken())
@@ -28,7 +28,7 @@ export class EmpleadosService {
   getLocalEmpleado() {
     return this.empleados;
   }
-  setLocalEmpleado(empleados) {
-    this.empleados = empleados;
+  setLocalEmpleado(empleado) {
+    this.empleados = empleado;
   }
 }
