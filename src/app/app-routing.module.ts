@@ -15,6 +15,7 @@ import {AgregarEventoComponent} from './evento/agregar-evento/agregar-evento.com
 import {EditarEventoComponent} from './evento/editar-evento/editar-evento.component';
 import {EventosComponent} from "./evento/eventos/eventos.component";
 import {NuevaCotizacionComponent} from "./cotizacion/nueva-cotizacion/nueva-cotizacion.component";
+import {EditarEmpleadoComponent} from "./empleado/editar-empleado/editar-empleado.component";
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
   // empleados
   {path: 'empleados', component: EmpleadosComponent, canActivate: [CanActivateTeam]},
   {path: 'agregar-empleados', component: AgregarEmpleadoComponent, canActivate: [CanActivateTeam]},
-  {path: 'ver-empleados', component: VerEmpleadoComponent, canActivate: [CanActivateTeam]},
+  {path: 'editar-empleado', component: EditarEmpleadoComponent, canActivate: [CanActivateTeam]},
   // clientes
   {path: 'clientes', component: ClienteComponent, canActivate: [CanActivateTeam]},
   {path: 'agregar-cliente', component: AgregarClienteComponent, canActivate: [CanActivateTeam]},

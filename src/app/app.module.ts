@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { VerEmpleadoComponent } from './empleado/ver_empleado/empleado.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { PrincipalComponent } from './principal/principal.component';
 import { EditarEmpleadoComponent } from './empleado/editar-empleado/editar-empleado.component';
@@ -37,7 +36,6 @@ import { NuevaCotizacionComponent } from './cotizacion/nueva-cotizacion/nueva-co
 @NgModule({
   declarations: [
     AppComponent,
-    VerEmpleadoComponent,
     PrincipalComponent,
     EditarEmpleadoComponent,
     EmpleadosComponent,
