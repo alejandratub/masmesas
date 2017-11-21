@@ -22,10 +22,7 @@ export class EmpleadosService {
   deleteEmpleado(empleados) {
     return this.http.delete('http://localhost:3000/api/empleados/' + empleados.id + '?access_token=' + this.auth.getToken(), {});
   }
-  getEmpleado(empleados) {
-    return this.http.get('http://localhost:3000/api/empleados/' + empleados.id + '?access_token=' + this.auth.getToken(), {});
-  }
-  getLocalEmpleado() {
+   getLocalEmpleado() {
     return this.empleados;
   }
   setLocalEmpleado(empleado) {

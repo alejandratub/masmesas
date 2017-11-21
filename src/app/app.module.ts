@@ -42,8 +42,7 @@ import { AgregarPagoComponent } from './pago/agregar-pago/agregar-pago.component
 import { EditarPagoComponent } from './pago/editar-pago/editar-pago.component';
 import { VerPagoComponent } from './pago/ver-pago/ver-pago.component';
 import { PagoCotizacionComponent } from './pago/pago-cotizacion/pago-cotizacion.component';
-
-
+import { AmChartsModule } from '@amcharts/amcharts3-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,13 +70,14 @@ import { PagoCotizacionComponent } from './pago/pago-cotizacion/pago-cotizacion.
     AgregarPagoComponent,
     EditarPagoComponent,
     VerPagoComponent,
-    PagoCotizacionComponent,
+    PagoCotizacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AmChartsModule
   ],
   providers: [
     ApiService,
@@ -89,8 +89,8 @@ import { PagoCotizacionComponent } from './pago/pago-cotizacion/pago-cotizacion.
     MueblesService,
     DecoracionsService,
     PagoService,
-    CanActivateTeam,
-    TokenInterceptor
+    CanActivateTeam
+
   ],
   bootstrap: [AppComponent]
 })

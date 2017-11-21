@@ -2,7 +2,7 @@
 <div class="container">
 
   <h2>Nueva Cotizacion</h2>
-  <form name="form" (ngSubmit)="f.form.valid && addCliente()" #f="ngForm" novalidate>
+  <form name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
     <div class="row">
       <div class="col">
         <label for="clientes">Clientes</label><br>
@@ -53,7 +53,7 @@
       </div>
       <div class="col">
         <label> </label><br>
-        <button [disabled]="loading" class="btn btn-primary" (click)="addMueble()">+</button>
+        <button  [disabled]="loading" class="btn btn-primary" (click)="addMueble()">+</button>
       </div>
     </div>
     <div class=row *ngIf="!!decoraciones">
@@ -87,6 +87,27 @@
         <button [disabled]="loading" class="btn btn-primary" (click)="addDecoracion()">+</button>
       </div>
     </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let decoracion of decoracions;">
+        <td>{{decoracion.nombre}}</td>
+        <td>{{decoracion.tipo}}</td>
+        <td>{{decoracion.cantidad}}</td>
+        <td><button [disabled]="loading" class="btn btn-secondary" (click)="updateDecoracion(decoracion)" >Editar</button></td>
+        <td><button [disabled]="loading" class="btn btn-danger" (click)="deleteDecoracion(decoracion, i)">Eliminar</button></td>
+
+      </tr>
+
+      </tbody>
+    </table>
 
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
       <label for="precio_montaje">Precio de montaje</label>
@@ -100,7 +121,7 @@
       <div *ngIf="f.submitted && !flete.valid" class="help-block">El flete es incorrecto</div>
     </div>
     <div class="form-group">
-      <button [disabled]="loading" class="btn btn-primary">Agregar</button>
+      <button [disabled]="loading" class="btn btn-primary" (click)="addCotizacion()">Agregar</button>
     </div>
   </form>
 

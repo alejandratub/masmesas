@@ -19,8 +19,8 @@
       <div *ngIf="f.submitted && !sueldo.valid" class="help-block">El sueldo es incorrecto</div>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !puesto.valid }">
-      <label for="puesto">puesto</label>
-      <input type="text" class="form-control" name="direccion" [(ngModel)]="empleado.direpuestoccion" #puesto="ngModel" required />
+      <label for="puesto">Puesto</label>
+      <input type="text" class="form-control" name="direccion" [(ngModel)]="empleado.puesto" #puesto="ngModel" required />
       <div *ngIf="f.submitted && !puesto.valid" class="help-block">El puesto es incorrecto</div>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !telefono.valid }">

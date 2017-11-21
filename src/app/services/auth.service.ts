@@ -33,4 +33,7 @@ export class AuthService {
   getToken() {
     return this.token;
   }
+  logout(){
+    return this.http.post('http://localhost:3000/api/logout?access_token=' + this.token, {});
+  }
 }

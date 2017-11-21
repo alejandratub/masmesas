@@ -17,7 +17,7 @@ export class AgregarEmpleadoComponent implements OnInit {
   addEmpleado() {
     this.empleadoService.addEmpleado(this.empleado).subscribe(data => {
       console.log(data);
-      alert('Cliente creado con éxito');
+      alert('Empleado creado con éxito');
       this.router.navigate(['empleados']);
     }, err => {
       console.log(err);
