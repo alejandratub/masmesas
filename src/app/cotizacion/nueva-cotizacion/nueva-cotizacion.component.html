@@ -2,7 +2,7 @@
 <div class="container">
 
   <h2>Nueva Cotizacion</h2>
-  <form name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+  <form name="form" (ngSubmit)="f.form.valid && addCotizacion()" #f="ngForm" novalidate>
     <div class="row">
       <div class="col">
         <label for="clientes">Clientes</label><br>
@@ -87,27 +87,55 @@
         <button [disabled]="loading" class="btn btn-primary" (click)="addDecoracion()">+</button>
       </div>
     </div>
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Tipo</th>
-        <th>Cantidad</th>
-        <th>Total</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let decoracion of decoracions;">
-        <td>{{decoracion.nombre}}</td>
-        <td>{{decoracion.tipo}}</td>
-        <td>{{decoracion.cantidad}}</td>
-        <td><button [disabled]="loading" class="btn btn-secondary" (click)="updateDecoracion(decoracion)" >Editar</button></td>
-        <td><button [disabled]="loading" class="btn btn-danger" (click)="deleteDecoracion(decoracion, i)">Eliminar</button></td>
+    <div class="row">
+      <div class = "col">
+        <h3>Muebles Seleccionados</h3>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th> </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let m of cantidadMueble; let i = index;">
+              <td *ngIf="m">{{muebles[i].nombre}}</td>
+              <td *ngIf="m">{{muebles[i].tipo}}</td>
+              <td *ngIf="m">{{m}}</td>
+              <td *ngIf="m">{{m * muebles[i].costo_renta}}</td>
+              <td *ngIf="m"><button [disabled]="loading" class="btn btn-danger" (click)="deleteMueble(i)">-</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class = "col">
+        <h3>Decoración Seleccionada</h3>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th> </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let d of cantidadDecoracion; let i = index;">
+            <td *ngIf="d">{{decoraciones[i].nombre}}</td>
+            <td *ngIf="d">{{decoraciones[i].tipo}}</td>
+            <td *ngIf="d">{{d}}</td>
+            <td *ngIf="d"><button [disabled]="loading" class="btn btn-danger" (click)="deleteDecoracion(i)">-</button></td>
 
-      </tr>
+          </tr>
+          </tbody>
+        </table>
+      </div>
 
-      </tbody>
-    </table>
+    </div>
+
 
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !precio_montaje.valid }">
       <label for="precio_montaje">Precio de montaje</label>
@@ -120,8 +148,20 @@
       <input type="number" class="form-control" name="flete" [(ngModel)]="cotizacion.flete" #flete="ngModel" required/>
       <div *ngIf="f.submitted && !flete.valid" class="help-block">El flete es incorrecto</div>
     </div>
+    <div class=" row">
+      <div class="col-1">
+        <label for="total">Total</label>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-warning" >{{cotizacion.total+cotizacion.precio_montaje+cotizacion.flete
+            }}</button>
+        </div>
+      </div>
+    </div>
+
     <div class="form-group">
-      <button [disabled]="loading" class="btn btn-primary" (click)="addCotizacion()">Agregar</button>
+      <button [disabled]="!f.form.valid" class="btn btn-primary"(click)="alert('Hola');">Agregar</button>
     </div>
   </form>
 
