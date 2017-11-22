@@ -23,6 +23,7 @@ import {AgregarDecoracionComponent} from './decoracion/agregar-decoracion/agrega
 import {DecoracionesComponent} from './decoracion/decoraciones/decoraciones.component';
 import {PagosComponent} from './pago/pagos/pagos.component';
 import {AgregarPagoComponent} from './pago/agregar-pago/agregar-pago.component';
+import {CotizacionComponent} from "./cotizacion/cotizaciones/cotizacion.component";
 
 
 const routes: Routes = [
@@ -45,6 +46,7 @@ const routes: Routes = [
   {path: 'editar-evento', component: EditarEventoComponent, canActivate: [CanActivateTeam]},
   // cotizaciones
   {path: 'nueva-cotizacion', component: NuevaCotizacionComponent, canActivate: [CanActivateTeam]},
+  {path: 'cotizacion', component: CotizacionComponent, canActivate: [CanActivateTeam]},
   // muebles
   {path: 'muebles', component: MueblesComponent, canActivate: [CanActivateTeam]},
   {path: 'agregar-mueble', component: AgregarMuebleComponent, canActivate: [CanActivateTeam]},

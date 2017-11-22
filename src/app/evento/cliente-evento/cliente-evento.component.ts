@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Cliente} from '../../models/cliente';
 import {EventosService} from '../../services/eventos.service';
-import {Evento} from "../../models/eventos";
-import {ClienteService} from "../../services/cliente.service";
-import {Router} from "@angular/router";
+import {Evento} from '../../models/eventos';
+import {ClienteService} from '../../services/cliente.service';
+import {Router} from '@angular/router';
+import {CotizacionsService} from "../../services/cotizacion.service";
 
 @Component({
   selector: 'app-cliente-evento',
@@ -13,7 +14,7 @@ import {Router} from "@angular/router";
 export class ClienteEventoComponent implements OnInit {
   cliente: Cliente;
   eventos: Array<Evento>;
-  constructor(public eventoService: EventosService, public clienteService: ClienteService, private router: Router) {
+  constructor(public eventoService: EventosService, public clienteService: ClienteService, private router: Router, private cotizacionService: CotizacionsService) {
   }
   updateEvento(evento) {
     this.eventoService.setLocalEvento(evento);
@@ -32,6 +33,12 @@ export class ClienteEventoComponent implements OnInit {
       // Error de conexion
     });
   }
+  verCotizacion(cotizacion) {
+    this.cotizacionService.setLocalCotizacion(cotizacion);
+    this.router.navigate(['cotizacion']);
+
+  }
+
 
   ngOnInit() {
     this.cliente = this.clienteService.getLocalCliente();

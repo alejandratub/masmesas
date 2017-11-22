@@ -1,0 +1,29 @@
+<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+  <h2>Cotizacion</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Precio Montaje</th>
+        <th>Flete</th>
+        <th>Total</th>
+        <th></th>
+        <th></th>
+
+        <th> </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cotizacion of cotizaciones; let i = index;">
+        <td>{{cotizacion.precio_montaje}}</td>
+        <td>{{cotizacion.flete}}</td>
+        <td>{{cotizacion.total}}</td>
+        <td><button [disabled]="loading" class="btn btn-danger" (click)="deleteCotizacion(cotizacion, i)">Eliminar</button></td>
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</main>
+
