@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Cotizacion} from '../../models/cotizacion';
 import {PagoService} from '../../services/pago.service';
 import {Router} from '@angular/router';
 import {Pago} from '../../models/pago';
+import {Evento} from '../../models/eventos';
 
 @Component({
   selector: 'app-pagos',
@@ -10,7 +10,7 @@ import {Pago} from '../../models/pago';
   styleUrls: ['./pagos.component.css']
 })
 export class PagosComponent implements OnInit {
-  cotizacion: Array<Cotizacion>;
+  evento: Array<Evento>;
   pago: Array<Pago>;
 
   constructor(public pagoService: PagoService, public router: Router) {
@@ -28,19 +28,14 @@ export class PagosComponent implements OnInit {
     });
   }
 
-  updatePago(pago) {
-    this.pagoService.setLocalPago(pago);
-    this.router.navigate(['editar-pago']);
-  }
-
   ngOnInit() {
     this.pagoService.getAllPagos().subscribe(data => {
       this.pago = data;
-      this.cotizacion = new Array<Cotizacion>(this.pago.length);
+      this.evento = new Array<Evento>(this.pago.length);
       for (const pago of this.pago) {
-        this.pagoService.getCotizacion(pago).subscribe(
+        this.pagoService.getEvento(pago).subscribe(
           data2 => {
-            this.cotizacion.push(data2[0]);
+            this.evento.push(data2[0]);
           }, err => {
             console.log(err);
             // Error de conexion

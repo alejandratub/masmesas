@@ -37,9 +37,6 @@ import { AgregarDecoracionComponent } from './decoracion/agregar-decoracion/agre
 import { EditarDecoracionComponent } from './decoracion/editar-decoracion/editar-decoracion.component';
 import { PagosComponent } from './pago/pagos/pagos.component';
 import { AgregarPagoComponent } from './pago/agregar-pago/agregar-pago.component';
-import { EditarPagoComponent } from './pago/editar-pago/editar-pago.component';
-import { VerPagoComponent } from './pago/ver-pago/ver-pago.component';
-import { PagoCotizacionComponent } from './pago/pago-cotizacion/pago-cotizacion.component';
 import { AmChartsModule } from '@amcharts/amcharts3-angular';
 @NgModule({
   declarations: [
@@ -65,10 +62,7 @@ import { AmChartsModule } from '@amcharts/amcharts3-angular';
     AgregarDecoracionComponent,
     EditarDecoracionComponent,
     PagosComponent,
-    AgregarPagoComponent,
-    EditarPagoComponent,
-    VerPagoComponent,
-    PagoCotizacionComponent
+    AgregarPagoComponent
   ],
   imports: [
     BrowserModule,

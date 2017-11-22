@@ -23,8 +23,6 @@ import {AgregarDecoracionComponent} from './decoracion/agregar-decoracion/agrega
 import {DecoracionesComponent} from './decoracion/decoraciones/decoraciones.component';
 import {PagosComponent} from './pago/pagos/pagos.component';
 import {AgregarPagoComponent} from './pago/agregar-pago/agregar-pago.component';
-import {EditarPagoComponent} from './pago/editar-pago/editar-pago.component';
-import {VerPagoComponent} from './pago/ver-pago/ver-pago.component';
 
 
 const routes: Routes = [
@@ -57,9 +55,7 @@ const routes: Routes = [
   {path: 'decoracion', component: DecoracionesComponent, canActivate: [CanActivateTeam]},
   // pagos
   {path: 'pagos', component: PagosComponent, canActivate: [CanActivateTeam]},
-  {path: 'agregar-pago', component: AgregarPagoComponent, canActivate: [CanActivateTeam]},
-  {path: 'editar-pago', component: EditarPagoComponent, canActivate: [CanActivateTeam]},
-  {path: 'ver-pago', component: VerPagoComponent, canActivate: [CanActivateTeam]}
+  {path: 'agregar-pago', component: AgregarPagoComponent, canActivate: [CanActivateTeam]}
 
 
 
