@@ -1,2 +1,31 @@
 <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+  <div class="container">
+
+    <h2>Registrar Pago</h2>
+    <form name="form" (ngSubmit)="f.form.valid " #f="ngForm" novalidate>
+      <div class="row">
+        <div class="col">
+          <label for="clientes">Clientes</label><br>
+          <select required>
+            <option *ngFor="let cliente of clientes" (click)="changeCliente(cliente)">
+              {{cliente.nombre}} {{cliente.apellido}}
+            </option>
+          </select>
+
+        </div>
+        <div class="col">
+          <div class="dropdown">
+            <label for="eventos">Eventos</label><br>
+            <select name="eventos" required>
+              <option *ngFor="let evento of eventos"
+                      [value]="evento" selected disabled>
+                {{evento.tipo}} {{evento.fecha}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+    </form>
+  </div>
 </main>

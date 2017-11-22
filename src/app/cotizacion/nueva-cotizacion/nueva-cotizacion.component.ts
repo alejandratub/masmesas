@@ -9,7 +9,7 @@ import {Cotizacion} from '../../models/cotizacion';
 import {MueblesService} from '../../services/muebles.service';
 import {DecoracionsService} from '../../services/decoracion.service';
 import {EventosService} from '../../services/eventos.service';
-import {CotizacionsService} from "../../services/cotizacion.service";
+import {CotizacionsService} from '../../services/cotizacion.service';
 
 @Component({
   selector: 'app-nueva-cotizacion',
@@ -84,6 +84,31 @@ export class NuevaCotizacionComponent implements OnInit {
         for (let i = 0; i < this.muebles.length; i++) {
           if (this.cantidadMueble[i] > 0 ) {
             this.cotizacionService.addMuebleCotizacion(this.muebles[i], this.cotizacion, this.cantidadMueble[i]).subscribe(data2 => {
+              console.log(data2);
+            }, err => {
+              console.log(err);
+              // Error de conexion
+              alert('Error de conexion');
+            });
+            this.muebleService.updateMueble(this.muebles[i]).subscribe(data2 => {
+              console.log(data2);
+            }, err => {
+              console.log(err);
+              // Error de conexion
+              alert('Error de conexion');
+            });
+          }
+        }
+        for (let i = 0; i < this.decoraciones.length; i++) {
+          if (this.cantidadDecoracion[i] > 0 ) {
+            this.cotizacionService.addDecoracionCotizacion(this.decoraciones[i], this.cotizacion, this.cantidadDecoracion[i]).subscribe(data3 => {
+              console.log(data3);
+            }, err => {
+              console.log(err);
+              // Error de conexion
+              alert('Error de conexion');
+            });
+            this.decoracionService.updateDecoracion(this.decoraciones[i]).subscribe(data2 => {
               console.log(data2);
             }, err => {
               console.log(err);

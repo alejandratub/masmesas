@@ -32,6 +32,11 @@ export class CotizacionsService {
       cantidad: cantidad
     });
   }
+    addDecoracionCotizacion(decoracion, cotizacion, cantidad) {
+      return this.http.put('http://localhost:3000/api/cotizaciones/' + cotizacion.id + '/muebles/rel/' + decoracion.id + '?access_token=' + this.auth.getToken(), {
+        cantidad: cantidad
+      });
+    }
   getLocalCotizacion() {
     return this.cotizacion;
   }
