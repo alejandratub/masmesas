@@ -5,7 +5,7 @@ Para poder usarlo es necesario tener instalado `Angular CLI`y `Node JS`.
 
 ## Descarga del repositorio
 
-Descargue o clone el repositorio en su computadora, una vez que tenga la carpeta completa,dentro de la carpeta corra el comando `npm install`. Después de esto ya se puede correr la aplicación con el comando `ng serve`, después de esto en su navegador vaya a
+Descargue o clone el repositorio en su computadora, una vez que tenga la carpeta completa, dentro de la carpeta corra el comando `npm install`. Después de esto ya se puede correr la aplicación con el comando `ng serve`, en su navegador vaya a
  `http://localhost:4200/` para poder ver la aplicación corriendo.
 
 ## Ver el código
