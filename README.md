@@ -1,27 +1,14 @@
-# MasmesasFront
+# Masmesas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+En este repositorio se encuentra el front-end del proyecto final de Bases de Datos, para poderlo correr localmente, también es necesario usar el repositorio que se encuentra en https://github.com/alejandratub/bases- y seguir las instrucciones de instalación.
+Para poder usarlo es necesario tener instalado `Angular CLI`y `Node JS`.
 
-## Development server
+## Descarga del repositorio
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Descargue o clone el repositorio en su computadora, una vez que tenga la carpeta completa,dentro de la carpeta corra el comando `npm install`. Después de esto ya se puede correr la aplicación con el comando `ng serve`, después de esto en su navegador vaya a
+ `http://localhost:4200/` para poder ver la aplicación corriendo.
 
-## Code scaffolding
+## Ver el código
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para ver el código simplemente descargue la carpeta y abra los archivos con un editor de texto.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
