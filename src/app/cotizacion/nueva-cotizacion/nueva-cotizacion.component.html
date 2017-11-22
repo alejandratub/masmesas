@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col">
         <label for="clientes">Clientes</label><br>
-        <select>
+        <select required>
           <option *ngFor="let cliente of clientes" (click)="changeCliente(cliente)">
             {{cliente.nombre}} {{cliente.apellido}}
           </option>
@@ -16,9 +16,9 @@
       <div class="col">
         <div class="dropdown">
           <label for="eventos">Eventos</label><br>
-          <select name="eventos">
+          <select name="eventos" required>
             <option *ngFor="let evento of eventos"
-                    [value]="evento">
+                    [value]="evento" selected disabled>
               {{evento.tipo}} {{evento.fecha}}
             </option>
           </select>
@@ -161,7 +161,7 @@
     </div>
 
     <div class="form-group">
-      <button [disabled]="!f.form.valid" class="btn btn-primary"(click)="alert('Hola');">Agregar</button>
+      <button [disabled]="!f.form.valid" class="btn btn-primary">Agregar</button>
     </div>
   </form>
 

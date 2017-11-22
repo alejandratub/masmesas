@@ -38,8 +38,7 @@ export class NuevaCotizacionComponent implements OnInit {
     this.cotizacion.flete = 0;
     this.cotizacion.total = 0;
   }
-  changeCliente(cliente){
-    console.log(cliente);
+  changeCliente(cliente) {
     this.eventoService.getEventoCliente(cliente).subscribe(data => {
       this.eventos = data;
     }, err => {
@@ -66,7 +65,11 @@ export class NuevaCotizacionComponent implements OnInit {
     this.cantidadMueble[i] = 0;
     this.total();
   }
-  addCotizacion(){
+  addCotizacion() {
+    if(this.eventos.length === 0) {
+      alert('El cliente debe tener al menos un evento');
+      this.router.navigate(['principal']);
+    }
     this.total();
   }
   total() {
@@ -94,9 +97,15 @@ export class NuevaCotizacionComponent implements OnInit {
     this.decoraciones[i].cantidad += this.cantidadDecoracion[i];
     this.cantidadDecoracion[i] = 0;
   }
+  alert(){
+    alert('HOLA');
+  }
   ngOnInit() {
     this.clienteService.getAllClientes().subscribe(data => {
       this.clientes = data;
+      if (this.clientes.length > 0) {
+        this.changeCliente(this.clientes[0]);
+      }
       console.log(data);
     }, err => {
       console.log(err);
