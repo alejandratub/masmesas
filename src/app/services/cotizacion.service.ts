@@ -13,7 +13,8 @@ export class CotizacionsService {
       .map(res => res as Cotizacion[] || []);
   }
   addCotizacion(cotizacion) {
-    return this.http.post('http://localhost:3000/api/cotizaciones?access_token=' + this.auth.getToken(), cotizacion);
+    return this.http.post('http://localhost:3000/api/cotizaciones?access_token=' + this.auth.getToken(), cotizacion)
+      .map(res => res as Cotizacion || null);
   }
 
   updateCotizacion(cotizacion) {
@@ -25,6 +26,11 @@ export class CotizacionsService {
   }
   getCotizacion(cotizacion) {
     return this.http.get('http://localhost:3000/api/cotizaciones/' + cotizacion.id + '?access_token=' + this.auth.getToken(), {});
+  }
+  addMuebleCotizacion(mueble, cotizacion, cantidad) {
+    return this.http.put('http://localhost:3000/api/cotizaciones/' + cotizacion.id + '/muebles/rel/' + mueble.id + '?access_token=' + this.auth.getToken(), {
+      cantidad: cantidad
+    });
   }
   getLocalCotizacion() {
     return this.cotizacion;
