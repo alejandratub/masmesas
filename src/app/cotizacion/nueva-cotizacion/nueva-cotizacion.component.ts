@@ -9,6 +9,7 @@ import {Cotizacion} from '../../models/cotizacion';
 import {MueblesService} from '../../services/muebles.service';
 import {DecoracionsService} from '../../services/decoracion.service';
 import {EventosService} from '../../services/eventos.service';
+import {CotizacionsService} from "../../services/cotizacion.service";
 
 @Component({
   selector: 'app-nueva-cotizacion',
@@ -28,7 +29,7 @@ export class NuevaCotizacionComponent implements OnInit {
   cantidadDecoracion: Array<number>;
   cd: number;
   constructor(private clienteService: ClienteService, private eventoService: EventosService, private router: Router,
-              private muebleService: MueblesService, private decoracionService: DecoracionsService) {
+              private muebleService: MueblesService, private decoracionService: DecoracionsService, private cotizacionService: CotizacionsService) {
     this.selectedMueble = 0;
     this.cm = 0;
     this.cotizacion = new Cotizacion();
@@ -68,9 +69,12 @@ export class NuevaCotizacionComponent implements OnInit {
   addCotizacion() {
     if(this.eventos.length === 0) {
       alert('El cliente debe tener al menos un evento');
+      this.router.navigate(['clientes']);
+    }else{
+      this.total();
+      alert('Se guardado la cotizacion');
       this.router.navigate(['principal']);
     }
-    this.total();
   }
   total() {
     this.cotizacion.total = 0;
@@ -78,7 +82,7 @@ export class NuevaCotizacionComponent implements OnInit {
     {
       this.cotizacion.total +=  (this.muebles[i].costo_renta * this.cantidadMueble[i]);
     }
-    // this.cotizacion.total += (this.cotizacion.precio_montaje + this.cotizacion.flete);
+     this.cotizacion.total += (this.cotizacion.precio_montaje + this.cotizacion.flete);
     console.log(this.cotizacion.total);
   }
   changeDecoracion(index) {
